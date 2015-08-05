@@ -12,7 +12,10 @@
 	margin: 1% 0 1% .8%;
 }
 .col:first-child { margin-left: 0; }
+.jumbotron p {
 
+	color: red;
+}
 /*  GROUPING  */
 .group:before,
 .group:after { content:""; display:table; }
