@@ -32,13 +32,17 @@
 <script type='text/javascript'>
 
 $(document).ready(function() {
-$('#calendar').fullCalendar({
-    googleCalendarApiKey: 'AIzaSyBHKORr2SoNwdMK2VqUw49U5_Xk7559DfM',
-
-    events: {
-        googleCalendarId: 'roslynmusicgroup.com_sts0hb075lad12gr881hutp2og@group.calendar.google.com'
-    }
-});
+    $('#calendar').fullCalendar({
+        googleCalendarApiKey: 'AIzaSyBHKORr2SoNwdMK2VqUw49U5_Xk7559DfM',
+eventSources: [
+            {
+                googleCalendarId: 'roslynmusicgroup.com_3plqcb6fsrnj54mmsftl6osrbs@group.calendar.google.com'
+            },
+            {
+                googleCalendarId: 'roslynmusicgroup.com_sts0hb075lad12gr881hutp2og@group.calendar.google.com',
+            }
+        ]
+    });
 });
 
 </script>
@@ -234,7 +238,7 @@ $('#calendar').fullCalendar({
       <input type="hidden" name="draftResponse" value="[,," 563493788241922912 "]">
       <input type="hidden" name="pageHistory" value="0">
       <input type="hidden" name="fbzx" value="563493788241922912">
-      <input type="submit" name="submit" value="Submit" id="ss-submit" class="btn btn-primary">
+      <input type="submit" name="submit" value="Submit" id="ss-submit" class="btn btn-primary btn-lg">
     </form>
   </div>
 </body>
