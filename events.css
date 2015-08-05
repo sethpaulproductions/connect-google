@@ -15,7 +15,8 @@
 .col:first-child { margin-left: 0; }
 .jumbotron p {
 
-	color: red;
+	color: red !important;
+	background-color: red !important;
 }
 /*  GROUPING  */
 .group:before,
