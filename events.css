@@ -4,13 +4,7 @@
 	padding: 0px;
 	margin: 0px;
 }
-.test {
-	background-color: black;
-}
 
-.test p {
-	color: red;
-}
 
 /*  COLUMN SETUP  */
 .col {
@@ -19,11 +13,7 @@
 	margin: 1% 0 1% .8%;
 }
 .col:first-child { margin-left: 0; }
-.jumbotron p {
 
-	color: red !important;
-	background-color: red !important;
-}
 /*  GROUPING  */
 .group:before,
 .group:after { content:""; display:table; }
