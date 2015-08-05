@@ -53,7 +53,7 @@ $('#calendar').fullCalendar({
     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){window.location='http://www.roslynmusicgroup.com/forms';}"></iframe>
     <form action="https://docs.google.com/a/roslynmusicgroup.com/forms/d/1S8bpV-T96_csWY3GH-XyIKLirIycSjFiWBEMji7d23Y/formResponse" method="post" target="hidden_iframe" id="commentForm" onsubmit="submitted=true;">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-4">
           <div class="panel panel-default">
             <div class="panel-heading">Artist</div>
             <div class="panel-body">
@@ -73,17 +73,25 @@ $('#calendar').fullCalendar({
               </select>
             </div>
           </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-12">
-            <div class="panel panel-default">
-              <div class="panel-heading">Calendar</div>
-              <div class="panel-body">
-                <div id='calendar'></div>
-              </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">Venue Contact Details
+            </div>
+            <div class="panel-body">
+              <label for="entry_200452660" class="form-label">Contact Name</label>
+              <input type="text" name="entry.200452660" value class="form-control" id="entry_200452660" dir="auto">
+              <label for="entry_970547290" class="form-label">Contact Number/Email</label>
+              <input type="text" name="entry.970547290" value class="form-control" id="entry_970547290" dir="auto">
             </div>
           </div>
+        </div>
+        <div class="col-md-8">
+          <div class="panel panel-default">
+            <div class="panel-heading">Calendar</div>
+            <div class="panel-body">
+              <div id='calendar'></div>
+            </div>
+          </div>
+
         </div>
       </div>
       <div class="row">
@@ -100,18 +108,6 @@ $('#calendar').fullCalendar({
               <input type="text" name="entry.1627696256" value class="form-control" id="entry_1627696256" dir="auto">
               <label for="entry_1969676068" class="form-label">Venue Website</label>
               <input type="text" name="entry.1969676068" value class="form-control" id="entry_1969676068" dir="auto">
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">Venue Contact Details
-            </div>
-            <div class="panel-body">
-              <label for="entry_200452660" class="form-label">Contact Name</label>
-              <input type="text" name="entry.200452660" value class="form-control" id="entry_200452660" dir="auto">
-              <label for="entry_970547290" class="form-label">Contact Number/Email</label>
-              <input type="text" name="entry.970547290" value class="form-control" id="entry_970547290" dir="auto">
             </div>
           </div>
         </div>
@@ -146,8 +142,6 @@ $('#calendar').fullCalendar({
             </div>
           </div>
         </div>
-      </div>
-      <div class="row">
         <div class="col-md-4">
           <div class="panel panel-default">
             <div class="panel-heading">Production Requirements
@@ -183,8 +177,10 @@ $('#calendar').fullCalendar({
 
             </div>
           </div>
-
         </div>
+      </div>
+      <div class="row">
+
         <div class="col-md-4">
           <div class="panel panel-default">
             <div class="panel-heading">Promotion Requirements
@@ -211,7 +207,7 @@ $('#calendar').fullCalendar({
           </div>
 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-8">
           <div class="panel panel-default">
             <div class="panel-heading">Additional Information
             </div>
