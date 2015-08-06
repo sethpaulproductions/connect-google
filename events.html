@@ -13,36 +13,36 @@
 <script type='text/javascript' src='//googledrive.com/host/0B3kQ1Mt6SSkhfnoxaTFNREZXLU9SVEVlajdGWGREOW9YbDRpVjdxTTZ2Qks1cVduMFc2d1U/gcal.js'></script>
 
 <script type="text/javascript">
-    $(document).ready(function() {
-        $("#datetimepicker").datetimepicker();
-        $("#timepicker").datetimepicker({
-                datepicker: false,
-                format: 'g:i A'
-            });
-        $("#datepicker").datetimepicker({
-                timepicker: false,
-                format: 'D M j, Y'
-            });
-        $("#commentForm").validate({
-                meta: "validate"
-            });
-    });
+$(document).ready(function() {
+  $("#datetimepicker").datetimepicker();
+  $("#timepicker").datetimepicker({
+    datepicker: false,
+    format: 'g:i A'
+  });
+  $("#datepicker").datetimepicker({
+    timepicker: false,
+    format: 'D M j, Y'
+  });
+  $("#commentForm").validate({
+    meta: "validate"
+  });
+});
 </script>
 
 <script type='text/javascript'>
 
 $(document).ready(function() {
-    $('#calendar').fullCalendar({
-        googleCalendarApiKey: 'AIzaSyBHKORr2SoNwdMK2VqUw49U5_Xk7559DfM',
-eventSources: [
-            {
-                googleCalendarId: 'roslynmusicgroup.com_3plqcb6fsrnj54mmsftl6osrbs@group.calendar.google.com'
-            },
-            {
-                googleCalendarId: 'roslynmusicgroup.com_sts0hb075lad12gr881hutp2og@group.calendar.google.com',
-            }
-        ]
-    });
+  $('#calendar').fullCalendar({
+    googleCalendarApiKey: 'AIzaSyBHKORr2SoNwdMK2VqUw49U5_Xk7559DfM',
+    eventSources: [
+      {
+        googleCalendarId: 'roslynmusicgroup.com_3plqcb6fsrnj54mmsftl6osrbs@group.calendar.google.com'
+      },
+      {
+        googleCalendarId: 'roslynmusicgroup.com_sts0hb075lad12gr881hutp2og@group.calendar.google.com',
+      }
+    ]
+  });
 });
 
 </script>
@@ -66,7 +66,6 @@ eventSources: [
                   <option value></option>
                   <option value="Hold">Hold</option>
                   <option value="Confirmed">Confirmed</option>
-
                 </select>
                 <label for="entry_960593008" class="form-label">Artist*</label>
                 <select name="entry.960593008" class="form-control required" id="entry_960593008">
@@ -101,19 +100,25 @@ eventSources: [
             <div class="panel-heading">Venue/Event Details
             </div>
             <div class="panel-body">
-              <div class="form-inline">
-              <label for="entry_685042144" class="form-label">Venue/Event Name*</label>
-              <input type="text" name="entry.685042144" value class="form-control required" id="entry_685042144" dir="auto">
-              <label for="entry_416812735" class="form-label">Venue Address</label>
-              <input type="text" name="entry.416812735" value class="form-control" id="entry_416812735" dir="auto">
+              <div class = "row">
+                <div class="col-md-6">
+                  <div class="form-inline">
+                    <label for="entry_685042144" class="form-label">Venue/Event Name*</label>
+                    <input type="text" name="entry.685042144" value class="form-control required" id="entry_685042144" dir="auto">
+                    <label for="entry_416812735" class="form-label">Venue Address</label>
+                    <input type="text" name="entry.416812735" value class="form-control" id="entry_416812735" dir="auto">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-inline">
+                    <label for="entry_1627696256" class="form-label">Venue Phone Number</label>
+                    <input type="text" name="entry.1627696256" value class="form-control" id="entry_1627696256" dir="auto">
+                    <label for="entry_1969676068" class="form-label">Venue Website</label>
+                    <input type="text" name="entry.1969676068" value class="form-control" id="entry_1969676068" dir="auto">
+                  </div>
+                </div>
+              </div>
             </div>
-              <div class="form-inline">
-              <label for="entry_1627696256" class="form-label">Venue Phone Number</label>
-              <input type="text" name="entry.1627696256" value class="form-control" id="entry_1627696256" dir="auto">
-              <label for="entry_1969676068" class="form-label">Venue Website</label>
-              <input type="text" name="entry.1969676068" value class="form-control" id="entry_1969676068" dir="auto">
-            </div>
-          </div>
           </div>
         </div>
       </div>
@@ -157,32 +162,32 @@ eventSources: [
             </div>
             <div class="panel-body">
 
-                <label for="entry_1039891880" class="form-label">Audio</label>
-                <select class="form-control" name="entry.1039891880" id="entry_1039891880">
-                  <option value></option>
-                  <option value="Client Provided">Client Provided</option>
-                  <option value="Artist Provided">Artist Provided</option>
-                </select>
+              <label for="entry_1039891880" class="form-label">Audio</label>
+              <select class="form-control" name="entry.1039891880" id="entry_1039891880">
+                <option value></option>
+                <option value="Client Provided">Client Provided</option>
+                <option value="Artist Provided">Artist Provided</option>
+              </select>
 
 
-                <label for="entry_1361270627" class="form-label">Lighting</label>
-                <select class="form-control" name="entry.1361270627" id="entry_1361270627">
-                  <option value></option>
-                  <option value="Client Provided">Client Provided</option>
-                  <option value="Artist Provided">Artist Provided</option>
-                </select>
+              <label for="entry_1361270627" class="form-label">Lighting</label>
+              <select class="form-control" name="entry.1361270627" id="entry_1361270627">
+                <option value></option>
+                <option value="Client Provided">Client Provided</option>
+                <option value="Artist Provided">Artist Provided</option>
+              </select>
 
 
-                <label for="entry_2061365650" class="form-label">Backline</label>
-                <select class="form-control" name="entry.2061365650" id="entry_2061365650">
-                  <option value></option>
-                  <option value="Client Provided">Client Provided</option>
-                  <option value="Artist Provided">Artist Provided</option>
-                </select>
+              <label for="entry_2061365650" class="form-label">Backline</label>
+              <select class="form-control" name="entry.2061365650" id="entry_2061365650">
+                <option value></option>
+                <option value="Client Provided">Client Provided</option>
+                <option value="Artist Provided">Artist Provided</option>
+              </select>
 
 
-                <label for="entry_1484463713" class="form-label">Load-in Time</label>
-                <input type="text" id="timepicker" name="entry.1484463713" value class="form-control" dir="auto">
+              <label for="entry_1484463713" class="form-label">Load-in Time</label>
+              <input type="text" id="timepicker" name="entry.1484463713" value class="form-control" dir="auto">
 
             </div>
           </div>
@@ -196,58 +201,58 @@ eventSources: [
             </div>
             <div class="panel-body">
 
-                <label class="checkbox">
-                  <input type="checkbox" name="entry.433014753" value="Social Media" id="group_433014753_1">Social Media</label>
+              <label class="checkbox">
+                <input type="checkbox" name="entry.433014753" value="Social Media" id="group_433014753_1">Social Media</label>
                 <label class="checkbox">
                   <input type="checkbox" name="entry.433014753" value="Posters" id="group_433014753_2">Posters</label>
-                <label class="checkbox">
-                  <input type="checkbox" name="entry.433014753" value="Radio" id="group_433014753_3">Radio</label>
-                <label class="checkbox">
-                  <input type="checkbox" name="entry.433014753" value="Print" id="group_433014753_4">Print</label>
-                <label class="checkbox">
-                  <input type="checkbox" name="entry.433014753" value="__other_option__" id="group_433014753_5">Other:</label>
-                <input type="text" name="entry.433014753.other_option_response" value class="ss-q-other" id="entry_433014753_other_option_response" dir="auto" aria-label="Other">
+                  <label class="checkbox">
+                    <input type="checkbox" name="entry.433014753" value="Radio" id="group_433014753_3">Radio</label>
+                    <label class="checkbox">
+                      <input type="checkbox" name="entry.433014753" value="Print" id="group_433014753_4">Print</label>
+                      <label class="checkbox">
+                        <input type="checkbox" name="entry.433014753" value="__other_option__" id="group_433014753_5">Other:</label>
+                        <input type="text" name="entry.433014753.other_option_response" value class="ss-q-other" id="entry_433014753_other_option_response" dir="auto" aria-label="Other">
 
-                 <div><p></p></div>
-                <label for="entry_967534881" class="form-label">Promotion Start Date</label>
-                <input type="text" id="datepicker" name="entry.967534881" value class="form-control" dir="auto">
+                        <div><p></p></div>
+                        <label for="entry_967534881" class="form-label">Promotion Start Date</label>
+                        <input type="text" id="datepicker" name="entry.967534881" value class="form-control" dir="auto">
 
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="col-md-4">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">Venue Contact Details
+                      </div>
+                      <div class="panel-body">
+                        <label for="entry_200452660" class="form-label">Contact Name</label>
+                        <input type="text" name="entry.200452660" value class="form-control" id="entry_200452660" dir="auto">
+                        <label for="entry_970547290" class="form-label">Contact Number/Email</label>
+                        <input type="text" name="entry.970547290" value class="form-control" id="entry_970547290" dir="auto">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">Additional Information
+                      </div>
+                      <div class="panel-body">
+
+                        <textarea name="entry.402812855" rows="11" cols="0" class="form-control" id="entry_402812855" dir="auto"></textarea>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+
+
+                <input type="hidden" name="draftResponse" value="[,," 563493788241922912 "]">
+                <input type="hidden" name="pageHistory" value="0">
+                <input type="hidden" name="fbzx" value="563493788241922912">
+                <input type="submit" name="submit" value="Submit" id="ss-submit" class="btn btn-primary btn-lg">
+              </form>
             </div>
-          </div>
-
-        </div>
-        <div class="col-md-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">Venue Contact Details
-            </div>
-            <div class="panel-body">
-              <label for="entry_200452660" class="form-label">Contact Name</label>
-              <input type="text" name="entry.200452660" value class="form-control" id="entry_200452660" dir="auto">
-              <label for="entry_970547290" class="form-label">Contact Number/Email</label>
-              <input type="text" name="entry.970547290" value class="form-control" id="entry_970547290" dir="auto">
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">Additional Information
-            </div>
-            <div class="panel-body">
-
-                <textarea name="entry.402812855" rows="11" cols="0" class="form-control" id="entry_402812855" dir="auto"></textarea>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-
-
-      <input type="hidden" name="draftResponse" value="[,," 563493788241922912 "]">
-      <input type="hidden" name="pageHistory" value="0">
-      <input type="hidden" name="fbzx" value="563493788241922912">
-      <input type="submit" name="submit" value="Submit" id="ss-submit" class="btn btn-primary btn-lg">
-    </form>
-  </div>
-</body>
+          </body>
