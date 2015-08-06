@@ -1,9 +1,42 @@
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 
 
+
+<link href="events.css" rel="stylesheet">
+
+<link rel='stylesheet' href='//googledrive.com/host/0B3kQ1Mt6SSkhfnoxaTFNREZXLU9SVEVlajdGWGREOW9YbDRpVjdxTTZ2Qks1cVduMFc2d1U/fullcalendar.css' />
+
+<script src='//googledrive.com/host/0B3kQ1Mt6SSkhfnoxaTFNREZXLU9SVEVlajdGWGREOW9YbDRpVjdxTTZ2Qks1cVduMFc2d1U/moment.min.js'></script>
+<script src='//googledrive.com/host/0B3kQ1Mt6SSkhfnoxaTFNREZXLU9SVEVlajdGWGREOW9YbDRpVjdxTTZ2Qks1cVduMFc2d1U/fullcalendar.js'></script>
+<script type='text/javascript' src='//googledrive.com/host/0B3kQ1Mt6SSkhfnoxaTFNREZXLU9SVEVlajdGWGREOW9YbDRpVjdxTTZ2Qks1cVduMFc2d1U/gcal.js'></script>
+
+<script type='text/javascript'>
+
+$(document).ready(function() {
+    $('#calendar').fullCalendar({
+        googleCalendarApiKey: 'AIzaSyBHKORr2SoNwdMK2VqUw49U5_Xk7559DfM',
+eventSources: [
+            {
+                googleCalendarId: 'roslynmusicgroup.com_3plqcb6fsrnj54mmsftl6osrbs@group.calendar.google.com'
+            },
+            {
+                googleCalendarId: 'roslynmusicgroup.com_sts0hb075lad12gr881hutp2og@group.calendar.google.com',
+            }
+        ]
+    });
+});
+
+</script>
+</head>
 <body>
   <div class="container">
     <div class="jumbotron">
