@@ -71,15 +71,178 @@ eventSources: [
 </div>
 <div class="row">
 
-  <div class="col-md-4">
+  <div class="col-md-12">
     <div class="panel panel-default">
       <div class="panel-heading">Files</div>
       <div class="panel-body">
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <a data-toggle="tab" href="#venueTab">Venue Information</a>
+          </li>
+          <li>
+            <a data-toggle="tab" href="#clientTab">Client Information</a>
+          </li>
+          <li>
+            <a data-toggle="tab" href="#financialTab">Financial Information</a>
+          </li>
+          <li>
+        </ul>
+
+      <div class="tab-content">
+        <div id="venueTab" class="tab-pane fade in active">
+          <h3>Venue Information</h3>
+          <p>Select from the following:</p>
+          <div>
+              <div class="col span_1_of_3">
+                  <div class="row">
+                      <div class="form-group col-sm-4 ">
+                          <label for="idVenue">Venue</label>
+                          <input id="idVenue" type="text" name="Venue" class="form-control" value="">
+                      </div>
+                      <div class="form-group col-sm-4 ">
+                          <label for="idDoor">Cover</label>
+                          <input id="idDoor" type="text" name="Door" class="form-control" value="">
+                      </div>
+                      <div class="form-group col-sm-4 ">
+                          <label for="idShowTime">Show Time</label>
+                          <input id="idShowTime" type="text" name="Show Time" class="form-control" value="">
+                      </div>
+                  </div>
+              </div>
+              <div class="col span_1_of_3">
+                  <div class="row">
+                      <div class="form-group col-sm-4 ">
+                          <label for="idEventSS">Event</label>
+                          <input id="idEventSS" type="text" name="EventSS" class="form-control" value="">
+                      </div>
+                      <div class="form-group col-sm-4 ">
+                          <label for="idCapacity">Capacity</label>
+                          <input id="idCapacity" type="text" name="Capacity" class="form-control" value="">
+                      </div>
+                      <div class="form-group col-sm-4 ">
+                          <label for="idSoundCheck">Sound Check</label>
+                          <input id="idSoundCheck" type="text" name="Sound Check" class="form-control" value="">
+                      </div>
+                  </div>
+              </div>
+              <div class="col span_1_of_3">
+                  <div class="row">
+                      <div class="form-group col-sm-4 ">
+                          <label for="idCity">City</label>
+                          <input id="idCity" type="text" name="City" class="form-control" value="">
+                      </div>
+                      <div class="form-group col-sm-4 ">
+                          <label for="idDoors">Doors</label>
+                          <input id="idDoors" type="text" name="Doors" class="form-control" value="">
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+        <div id="clientTab" class="tab-pane fade">
+          <h3>Client Information</h3>
+          <p>Select from the following:</p>
+          <div>
+
+              <div class="col span_1_of_3">
+                  <div class="row">
+                      <div class="form-group col-sm-4 ">
+                          <label for="idClient">Client</label>
+                          <input id="idClient" type="text" name="Client" class="form-control" value="">
+                      </div>
+                      <div class="form-group col-sm-4 ">
+                          <label for="idAddress">Address</label>
+                          <input id="idAddress" type="text" name="Address" class="form-control" value="">
+                      </div>
+                  </div>
+              </div>
+              <div class="col span_1_of_3">
+                  <div class="row">
+                      <div class="form-group col-sm-4 ">
+                          <label for="idPhone">Phone</label>
+                          <input id="idPhone" type="text" name="Phone" class="form-control" value="">
+                      </div>
+                      <div class="form-group col-sm-4 ">
+                          <label for="idEmail">Email</label>
+                          <input id="idEmail" type="text" name="Email" class="form-control" value="">
+                      </div>
+
+                  </div>
+              </div>
+              <div class="col span_1_of_3">
+                  <div class="row">
+                      <div class="form-group col-sm-4 ">
+                          <label for="idContact">Contact</label>
+                          <input id="idContact" type="text" name="Contact" class="form-control" value="">
+                      </div>
+                      <div class="form-group col-sm-4 ">
+                          <label for="idWebsite">Website</label>
+                          <input id="idWebsite" type="text" name="Website" class="form-control" value="">
+                      </div>
+
+                  </div>
+              </div>
+
+          </div>
+
+        </div>
+        <div id="financialTab" class="tab-pane fade">
+          <h3>Financial Information</h3>
+          <p>Select from the following:</p>
+          <div>
+
+              <div class="col span_1_of_3">
+                  <div class="row">
+                      <div class="form-group col-sm-4 ">
+                          <label for="idGuarantee">Guarantee</label>
+                          <input id="idGuarantee" type="text" name="Guarantee" class="form-control" value="">
+                      </div>
+                      <div class="form-group col-sm-4 ">
+                          <label for="idDoorSales">% or Sales/Doors</label>
+                          <input id="idDoorSales" type="text" name="Door Sales" class="form-control" value="">
+                      </div>
+                  </div>
+              </div>
+              <div class="col span_1_of_3">
+                  <div class="row">
+                      <div class="form-group col-sm-4 ">
+                          <label for="idBookingPercentage">Booking %</label>
+                          <input id="idBookingPercentage" type="text" name="Booking %" class="form-control" value="">
+                      </div>
+                       <div class="form-group col-sm-4 ">
+                          <label for="idDeposit">Deposit</label>
+                          <input id="idDeposit" type="text" name="Deposit" class="form-control" value="">
+                      </div>
+                  </div>
+              </div>
+              <div class="col span_1_of_3">
+                  <div class="row">
+                      <div class="form-group col-sm-4 ">
+                          <label for="idCDsNum"># of CDs</label>
+                          <input id="idCDsNum" type="text" name="# of CDs" class="form-control" value="">
+                      </div>
+                      <div class="form-group col-sm-4 ">
+                          <label for="idTshirtNum"># of T-Shirts</label>
+                          <input id="idTshirtNum" type="text" name="# of T-Shirts" class="form-control" value="">
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+        </div>
+
+      </div>        
+
+
+
 <iframe src="https://drive.google.com/embeddedfolderview?id=0B3kQ1Mt6SSkhfnYzNjdNRXVMSHdiSFJaOWkwNmhqYkN0clI1LTNpd2t3M3hTRDRKX0xsRzA&usp=drive_web" width="100%" height="200" frameborder="0"></iframe>
   </div>
 </div>
 </div>
-  <div class="col-md-8">
+</div>
+<div class="row">
+  <div class="col-md-12">
     <div class="panel panel-default">
       <div class="panel-heading">Calendar</div>
       <div class="panel-body">
@@ -89,6 +252,7 @@ eventSources: [
 
   </div>
 </div>
+
 </div>
 
 </body>
