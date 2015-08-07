@@ -6,7 +6,19 @@
 	margin: 0px;
 }
 
-
+.event-popup {
+    background-color:white;
+    border: 1px solid green;
+    display:none;
+    font-weight:normal;
+    position:absolute;
+    bottom:20px;
+    left:-6px;
+    text-align:left;
+    text-shadow:none;
+    width:393px;
+    z-index:2000;
+}
 /*  COLUMN SETUP  */
 .col {
 	display: block;
