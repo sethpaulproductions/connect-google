@@ -28,7 +28,9 @@ $(document).ready(function() {
         googleCalendarApiKey: 'AIzaSyBHKORr2SoNwdMK2VqUw49U5_Xk7559DfM',
 eventSources: [
             {
-                googleCalendarId: 'roslynmusicgroup.com_3plqcb6fsrnj54mmsftl6osrbs@group.calendar.google.com'
+                googleCalendarId: 'roslynmusicgroup.com_3plqcb6fsrnj54mmsftl6osrbs@group.calendar.google.com',
+                color: 'yellow',   // an option!
+                textColor: 'red' // an option!
             },
 
             {
@@ -38,22 +40,7 @@ eventSources: [
     });
 });
 
-$(document).ready(function() {
-    $('#bootstrapModalFullCalendar').fullCalendar({
-        events: '/hackyjson/cal/',
-        header: {
-            left: '',
-            center: 'prev title next',
-            right: ''
-        },
-        eventClick:  function(event, jsEvent, view) {
-            $('#modalTitle').html(event.title);
-            $('#modalBody').html(event.description);
-            $('#eventUrl').attr('href',event.url);
-            $('#fullCalModal').modal();
-        }
-    });
-});
+
 </script>
 
 
@@ -62,7 +49,7 @@ $(document).ready(function() {
   <div class="container">
     <div class="jumbotron">
       <h1>Roslyn Music Group Tools</h1>
-      <p>Use the tools below to work with Roslyn Music Group events. </p>
+      <p>Use the tools below to work with Roslyn Music Group events. Yep. </p>
 
     </div>
 
@@ -112,21 +99,7 @@ $(document).ready(function() {
 </div>
 </div>
 </div>
-<div id="fullCalModal" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span> <span class="sr-only">close</span></button>
-                <h4 id="modalTitle" class="modal-title"></h4>
-            </div>
-            <div id="modalBody" class="modal-body"></div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button class="btn btn-primary"><a id="eventUrl" target="_blank">Event Page</a></button>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 <div class="row">
   <div class="col-md-12">
