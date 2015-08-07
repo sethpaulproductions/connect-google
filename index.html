@@ -43,13 +43,13 @@ eventSources: [
 
         ],
         dayClick: function(event) {
-            if (event.url) {
-               $('#testdate').val(event.start);
 
-                alert('Event: ' + event.title);
+               $('#testdate').val(date.format());
+
+                alert('Event: ' + date.format());
 
                 return false;
-            }
+          
         }
     });
 });
