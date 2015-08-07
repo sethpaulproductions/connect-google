@@ -42,14 +42,14 @@ eventSources: [
             },
 
         ],
-        dayClick: function(event) {
+        eventClick: function(event) {
+            if (event.url) {
+               $('#testdate').val(event.start);
 
-               $('#testdate').val(date.format());
-
-                alert('Event: ' + date.format());
+                alert('Event: ' + event.title);
 
                 return false;
-          
+            }
         }
     });
 });
