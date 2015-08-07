@@ -44,10 +44,10 @@ eventSources: [
         ],
         eventClick: function(event) {
             if (event.url) {
-               $('#testdate').val(event.start);
+                $('#testdate').val(event.start);
 
                 alert('Event: ' + event.title);
-
+                $("#myModal").modal('show');
                 return false;
             }
         },
@@ -55,9 +55,9 @@ eventSources: [
 
             alert('Clicked on: ' + date.format());
 
-            alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+            //alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
 
-            alert('Current view: ' + view.name);
+            //alert('Current view: ' + view.name);
 
             // change the day's background color just for fun
             $(this).css('background-color', 'red');
@@ -77,7 +77,24 @@ eventSources: [
       <p>Use the tools below to work with Roslyn Music Group events. </p>
 <input type="text"  class="form-control" id="testdate" >
     </div>
-
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Confirmation</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Do you want to save changes you made to document before closing?</p>
+                    <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 <div class="row">
   <div class="col-md-12">
     <div class="panel panel-default">
