@@ -44,7 +44,7 @@ eventSources: [
         ],
         eventClick: function(event) {
             if (event.url) {
-                window.open(event.url);
+                alert('Event: ' + event.title);
                 return false;
             }
         }
