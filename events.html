@@ -32,17 +32,48 @@ $(document).ready(function() {
 <script type='text/javascript'>
 
 $(document).ready(function() {
-  $('#calendar').fullCalendar({
-    googleCalendarApiKey: 'AIzaSyBHKORr2SoNwdMK2VqUw49U5_Xk7559DfM',
-    eventSources: [
-      {
-        googleCalendarId: 'roslynmusicgroup.com_3plqcb6fsrnj54mmsftl6osrbs@group.calendar.google.com'
-      },
-      {
-        googleCalendarId: 'roslynmusicgroup.com_sts0hb075lad12gr881hutp2og@group.calendar.google.com',
-      }
-    ]
-  });
+    $('#calendar').fullCalendar({
+        googleCalendarApiKey: 'AIzaSyBHKORr2SoNwdMK2VqUw49U5_Xk7559DfM',
+        header: {
+    left: 'prev,next today',
+    center: 'title',
+    right: 'month,agendaWeek,agendaDay'
+},
+eventSources: [
+            {
+                googleCalendarId: 'roslynmusicgroup.com_3plqcb6fsrnj54mmsftl6osrbs@group.calendar.google.com',
+                color: 'red'
+            },
+
+            {
+                googleCalendarId: 'roslynmusicgroup.com_sts0hb075lad12gr881hutp2og@group.calendar.google.com',
+            },
+
+        ],
+        eventClick: function(event) {
+            if (event.url) {
+                $('#testdate').val(event.start);
+                $('#idEventTitle').text(event.title);
+                $('#idDescription').text(event.description);
+                $('#ideventdate').val(event.start);
+            //    alert('Event: ' + event.title);
+                $("#myModal").modal('show');
+                return false;
+            }
+        },
+        dayClick: function(date, jsEvent, view) {
+            $('#datetimepicker').val(date.format());
+            //alert('Clicked on: ' + date.format());
+
+            //alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+
+            //alert('Current view: ' + view.name);
+
+            // change the day's background color just for fun
+            //$(this).css('background-color', 'red');
+
+        }
+    });
 });
 
 </script>
@@ -94,6 +125,29 @@ $(document).ready(function() {
 
         </div>
       </div>
+      <div id="myModal" class="modal fade">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="idEventTitle"></h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="form-group">
+                      <label for="comment">Date</label>
+                      <input type="text" class="form-control" id="ideventdate">
+                      <label for="comment">Details</label>
+                      <textarea class="form-control" rows="5" id="idDescription"></textarea>
+                    </div>
+
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+
       <div class="row">
 
 

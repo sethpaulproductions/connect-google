@@ -44,7 +44,6 @@ eventSources: [
         ],
         eventClick: function(event) {
             if (event.url) {
-                $('#testdate').val(event.start);
                 $('#idEventTitle').text(event.title);
                 $('#idDescription').text(event.description);
                 $('#ideventdate').val(event.start);
@@ -77,7 +76,6 @@ eventSources: [
     <div class="jumbotron">
       <h1>Roslyn Music Group Tools</h1>
       <p>Use the tools below to work with Roslyn Music Group events. </p>
-<input type="text"  class="form-control" id="testdate" >
     </div>
     <div id="myModal" class="modal fade">
         <div class="modal-dialog">
