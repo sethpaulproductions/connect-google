@@ -26,11 +26,15 @@
 $(document).ready(function() {
     $('#calendar').fullCalendar({
         googleCalendarApiKey: 'AIzaSyBHKORr2SoNwdMK2VqUw49U5_Xk7559DfM',
+        header: {
+    left: 'prev,next today',
+    center: 'title',
+    right: 'month,agendaWeek,agendaDay'
+},
 eventSources: [
             {
                 googleCalendarId: 'roslynmusicgroup.com_3plqcb6fsrnj54mmsftl6osrbs@group.calendar.google.com',
-                color: 'yellow',   // an option!
-                textColor: 'red' // an option!
+                color: 'red'
             },
 
             {
@@ -49,7 +53,7 @@ eventSources: [
   <div class="container">
     <div class="jumbotron">
       <h1>Roslyn Music Group Tools</h1>
-      <p>Use the tools below to work with Roslyn Music Group events. Yep. </p>
+      <p>Use the tools below to work with Roslyn Music Group events. </p>
 
     </div>
 
