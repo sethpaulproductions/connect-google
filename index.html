@@ -40,29 +40,7 @@ eventSources: [
             {
                 googleCalendarId: 'roslynmusicgroup.com_sts0hb075lad12gr881hutp2og@group.calendar.google.com',
             },
-            eventClick: function (event) {
-                if (event.url) {
-                    return false;
-                }
-            },
-            eventMouseover: function (event, jsEvent, view) {
-                $(".event-popup").fadeOut("slow", function () {
-                    $(this).remove();
-                });
-                var event_popup = '<div class="event-popup" style="border-top:1px solid #ccc;padding:1em;padding-bottom:2em;width:360px;"><h4>' + event.title + '</h4><p>';
-                event_popup += '</p>';
-                $("body").append(event_popup);
-                var pop_top = $(window).height() - jsEvent.pageY;
-                $(".event-popup").css({
-                    "bottom": pop_top,
-                        "left": jsEvent.pageX
-                }).fadeIn("fast");
-            },
-            eventMouseout: function () {
-                $(".event-popup").delay(1000).fadeOut("slow", function () {
-                    $(this).remove();
-                });
-            }                       
+
         ]
     });
 });
