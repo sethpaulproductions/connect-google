@@ -46,7 +46,8 @@ eventSources: [
             if (event.url) {
                 $('#testdate').val(event.start);
                 $('#idEventTitle').text(event.title);
-                $('#ideventdate').text(event.description);
+                $('#idDescription').text(event.description);
+                $('#ideventdate').text(event.start);
             //    alert('Event: ' + event.title);
                 $("#myModal").modal('show');
                 return false;
@@ -86,6 +87,7 @@ eventSources: [
                     <h4 class="modal-title" id="idEventTitle"></h4>
                 </div>
                 <div class="modal-body">
+                    <textarea rows="2" cols="20" wrap="hard" id="idDescription"></textarea>
                     <p id="ideventdate"></p>
 
                 </div>
