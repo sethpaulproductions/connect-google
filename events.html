@@ -6,6 +6,7 @@
 
 <script src="//cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.js" type="text/javascript"></script>
 
+<script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <link rel='stylesheet' href='//googledrive.com/host/0B3kQ1Mt6SSkhfnoxaTFNREZXLU9SVEVlajdGWGREOW9YbDRpVjdxTTZ2Qks1cVduMFc2d1U/fullcalendar.css' />
 
 <script src='//googledrive.com/host/0B3kQ1Mt6SSkhfnoxaTFNREZXLU9SVEVlajdGWGREOW9YbDRpVjdxTTZ2Qks1cVduMFc2d1U/moment.min.js'></script>
@@ -56,22 +57,13 @@ eventSources: [
               //  $('#idEventTitle').text(event.title);
             //    $('#idDescription').text(event.description);
             //    $('#ideventdate').val(event.start);
-            //    alert('Event: ' + event.title);
+               alert('Event: ' + event.title);
             //    $("#myModal").modal('show');
                 return false;
             }
         },
         dayClick: function(date, jsEvent, view) {
             $('#datetimepicker').val(date.format());
-            //alert('Clicked on: ' + date.format());
-
-            //alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-
-            //alert('Current view: ' + view.name);
-
-            // change the day's background color just for fun
-            //$(this).css('background-color', 'red');
-
         }
     });
 });
