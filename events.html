@@ -54,11 +54,11 @@ eventSources: [
         eventClick: function(event) {
             if (event.url) {
 
-              //  $('#idEventTitle').text(event.title);
-            //    $('#idDescription').text(event.description);
-            //    $('#ideventdate').val(event.start);
-               alert('Event: ' + event.title);
-            //    $("#myModal").modal('show');
+                $('#idEventTitle').text(event.title);
+                $('#idDescription').text(event.description);
+                $('#ideventdate').val(event.start);
+              // alert('Event: ' + event.title);
+                $("#myModal").modal('show');
                 return false;
             }
         },
