@@ -47,7 +47,7 @@ eventSources: [
                 $('#testdate').val(event.start);
                 $('#idEventTitle').text(event.title);
                 $('#idDescription').text(event.description);
-                $('#ideventdate').text(event.start);
+                $('#ideventdate').val(event.start);
             //    alert('Event: ' + event.title);
                 $("#myModal").modal('show');
                 return false;
@@ -88,11 +88,11 @@ eventSources: [
                 </div>
                 <div class="modal-body">
                   <div class="form-group">
-                    <label for="comment">Event Details:</label>
+                    <label for="comment">Date</label>
+                    <input type="text" class="form-control" id="ideventdate">
+                    <label for="comment">Details</label>
                     <textarea class="form-control" rows="5" id="idDescription"></textarea>
                   </div>
-
-                    <p id="ideventdate"></p>
 
                 </div>
                 <div class="modal-footer">
