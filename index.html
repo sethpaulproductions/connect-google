@@ -45,8 +45,8 @@ eventSources: [
         eventClick: function(event) {
             if (event.url) {
                 $('#testdate').val(event.start);
-                $('#idEventTitle').innerText(event.title);
-                $('#ideventdate').innerText(event.start);
+                $('#idEventTitle').val(event.title);
+                $('#ideventdate').val(event.start);
             //    alert('Event: ' + event.title);
                 $("#myModal").modal('show');
                 return false;
