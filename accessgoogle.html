@@ -1,21 +1,95 @@
-<html>
-  <head>
-    <script src="https://apis.google.com/js/client.js"></script>
-    <script>
-      function auth() {
-        var config = {
-          'client_id': '1072495187197-4vo0km3qo46n73qeuadsuih83bbee88p.apps.googleusercontent.com',
-          'scope': 'https://www.googleapis.com/auth/urlshortener'
-        };
-        gapi.auth.authorize(config, function() {
-          console.log('login complete');
-          console.log(gapi.auth.getToken());
-        });
-      }
-    </script>
-  </head>
-
-  <body>
-    <button onclick="auth();">Authorize</button>
-  </body>
-</html>
+1 <!--
+2   Copyright (c) 2011 Google Inc.
+3
+4   Licensed under the Apache License, Version 2.0 (the "License"); you may not
+5   use this file except in compliance with the License. You may obtain a copy of
+6   the License at
+7
+8   http://www.apache.org/licenses/LICENSE-2.0
+9
+10   Unless required by applicable law or agreed to in writing, software
+11   distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+12   WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+13   License for the specific language governing permissions and limitations under
+14   the License.
+15
+16   To run this sample, replace YOUR API KEY with your application's API key.
+17   It can be found at https://code.google.com/apis/console/?api=plus under API Access.
+18   Activate the Google+ service at https://code.google.com/apis/console/ under Services
+19 -->
+20 <!DOCTYPE html>
+21 <html>
+22   <head>
+23     <meta charset='utf-8' />
+24   </head>
+25   <body>
+26     <!--Add a button for the user to click to initiate auth sequence -->
+27     <button id="authorize-button" style="visibility: hidden">Authorize</button>
+28     <script type="text/javascript">
+29       // Enter a client ID for a web application from the Google Developer Console.
+30       // The provided clientId will only work if the sample is run directly from
+31       // https://google-api-javascript-client.googlecode.com/hg/samples/authSample.html
+32       // In your Developer Console project, add a JavaScript origin that corresponds to the domain
+33       // where you will be running the script.
+34       var clientId = '837050751313';
+35
+36       // Enter the API key from the Google Develoepr Console - to handle any unauthenticated
+37       // requests in the code.
+38       // The provided key works for this sample only when run from
+39       // https://google-api-javascript-client.googlecode.com/hg/samples/authSample.html
+40       // To use in your own application, replace this API key with your own.
+41       var apiKey = 'AIzaSyAdjHPT5Pb7Nu56WJ_nlrMGOAgUAtKjiPM';
+42
+43       // To enter one or more authentication scopes, refer to the documentation for the API.
+44       var scopes = 'https://www.googleapis.com/auth/plus.me';
+45
+46       // Use a button to handle authentication the first time.
+47       function handleClientLoad() {
+48         gapi.client.setApiKey(apiKey);
+49         window.setTimeout(checkAuth,1);
+50       }
+51
+52       function checkAuth() {
+53         gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, handleAuthResult);
+54       }
+55
+56
+57       function handleAuthResult(authResult) {
+58         var authorizeButton = document.getElementById('authorize-button');
+59         if (authResult && !authResult.error) {
+60           authorizeButton.style.visibility = 'hidden';
+61           makeApiCall();
+62         } else {
+63           authorizeButton.style.visibility = '';
+64           authorizeButton.onclick = handleAuthClick;
+65         }
+66       }
+67
+68       function handleAuthClick(event) {
+69         gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false}, handleAuthResult);
+70         return false;
+71       }
+72
+73       // Load the API and make an API call.  Display the results on the screen.
+74       function makeApiCall() {
+75         gapi.client.load('plus', 'v1', function() {
+76           var request = gapi.client.plus.people.get({
+77             'userId': 'me'
+78           });
+79           request.execute(function(resp) {
+80             var heading = document.createElement('h4');
+81             var image = document.createElement('img');
+82             image.src = resp.image.url;
+83             heading.appendChild(image);
+84             heading.appendChild(document.createTextNode(resp.displayName));
+85
+86             document.getElementById('content').appendChild(heading);
+87           });
+88         });
+89       }
+90     </script>
+91     <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+92     <div id="content"></div>
+93     <p>Retrieves your profile name using the Google Plus API.</p>
+94   </body>
+95 </html>
