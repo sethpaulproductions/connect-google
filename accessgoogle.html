@@ -1,79 +1,42 @@
+<!DOCTYPE HTML>
 <html>
-  <head>
-    <script type="text/javascript">
-    var CLIENT_ID = '1072495187197-4vo0km3qo46n73qeuadsuih83bbee88p.apps.googleusercontent.com';
-    var API_KEY = 'AIzaSyBHKORr2SoNwdMK2VqUw49U5_Xk7559DfM';
-    var SCOPES = 'https://www.googleapis.com/auth/drive';
+<head>
+	<meta charset="utf-8">
+	<title>
+		GDrive wrap
+	</title>
+</head>
+<body>
+	<button id="authorize-button" style="visibility: hidden">Authorize</button>
+	<script src="VRD.gd.js"></script>
+	<script>
+	VRD.gd.init({
+		clientId: '677917073539.apps.googleusercontent.com',
+		apiKey: 'AIzaSyA81n8ov6f-MFHlakzlAXZrsdAdlTt-XEc',
+		authBtn: 'authorize-button',
+		ready: function () {
+			//Create a new file
+			VRD.gd.insert ('GDtest2.html', '<h1>Hello GD wrap again!</h1>', function (data) {
+				log(data);
+			});
 
-    function handleClientLoad() {
-        gapi.client.setApiKey(API_KEY);
-        window.setTimeout(checkAuth,1);
-    }
+			//Find
+			/*VRD.gd.find ('GDtest2.html', function (data) {
+				log(data);
+			});*/
 
-    function checkAuth() {
-        var options = {
-            client_id: CLIENT_ID,
-            scope: SCOPES,
-            immediate: true
-        };
-        gapi.auth.authorize(options, handleAuthResult);
-    }
+			//Update a file
+			/*VRD.gd.update ('0B6-szffd7SWgSWRSM19fVEpVMFk', '<h1>Hello GD wrap again!</h1><p>It works!!!!!!</p><p>Nice!!!!</p>', function (data) {
+				log(data);
+			});*/
 
-    function handleAuthResult(authResult) {
-        var authorizeButton = document.getElementById('authorize-button');
-
-        if (authResult && !authResult.error) {
-            authorizeButton.style.visibility = 'hidden';
-            makeApiCall();
-        } else {
-            authorizeButton.style.visibility = '';
-            authorizeButton.onclick = handleAuthClick;
-        }
-    }
-
-    function handleAuthClick(event) {
-        var options = {
-            client_id: CLIENT_ID,
-            scope: SCOPES,
-            immediate: false
-        };
-        gapi.auth.authorize(options, handleAuthResult);
-        return false;
-    }
-
-    function makeApiCall() {
-        gapi.client.load('drive', 'v2', makeRequest);
-    }
-
-    function makeRequest() {
-        var request = gapi.client.drive.files.list({'maxResults': 5 });
-        request.execute(function(resp) {
-            for (i=0; i<resp.items.length; i++) {
-                var titulo = resp.items[i].title;
-                var fechaUpd = resp.items[i].modifiedDate;
-                var userUpd = resp.items[i].lastModifyingUserName;
-                var userEmbed = resp.items[i].embedLink;
-                var userAltLink = resp.items[i].alternateLink;
-
-                var fileInfo = document.createElement('li');
-                fileInfo.appendChild(document.createTextNode('TITLE: ' + titulo + ' - LAST MODIF: ' + fechaUpd + ' - BY: ' + userUpd ));
-                document.getElementById('content').appendChild(fileInfo);
-            }
-        });
-    }
-
-    $(document).ready(function() {
-      $('#authorize-button').on('click', handleAuthClick);
-      $.getScript('//apis.google.com/js/api.js', function() {
-        gapi.load('auth:client', handleClientLoad);
-      });
-    });
-    </script>
-    <script src="https://apis.google.com/js/client.js?onload=checkAuth">
-    </script>
-  </head>
-  <body>
-    <button id="authorize-button">Authorize</button>
-    <div id="content">Files:</div>
-  </body>
+			//Delete
+			/*VRD.gd.delete ('0B6-szffd7SWgNW1xZzJHMkVWYWs', function (data) {
+				log(data);*/
+			});
+		}
+	});
+	</script>
+	<script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+</body>
 </html>
