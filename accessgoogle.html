@@ -5,7 +5,7 @@
       // Developer Console, https://console.developers.google.com
       var CLIENT_ID = '1072495187197-4vo0km3qo46n73qeuadsuih83bbee88p.apps.googleusercontent.com';
 
-      var SCOPES = ['https://www.googleapis.com/auth/drive.files'];
+      var SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly'];
 
       /**
        * Check if current user has authorized this application.
@@ -65,7 +65,7 @@
           });
 
           request.execute(function(resp) {
-            appendPre('Some Files:');
+            appendPre('Files:');
             var files = resp.items;
             if (files && files.length > 0) {
               for (var i = 0; i < files.length; i++) {
