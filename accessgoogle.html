@@ -1,107 +1,79 @@
 <html>
   <head>
     <script type="text/javascript">
-      // Your Client ID can be retrieved from your project in the Google
-      // Developer Console, https://console.developers.google.com
-      var CLIENT_ID = '1072495187197-4vo0km3qo46n73qeuadsuih83bbee88p.apps.googleusercontent.com';
+    var CLIENT_ID = '1072495187197-4vo0km3qo46n73qeuadsuih83bbee88p.apps.googleusercontent.com';
+    var API_KEY = 'AIzaSyBHKORr2SoNwdMK2VqUw49U5_Xk7559DfM';
+    var SCOPES = 'https://www.googleapis.com/auth/drive';
 
-      var SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly'];
+    function handleClientLoad() {
+        gapi.client.setApiKey(API_KEY);
+        window.setTimeout(checkAuth,1);
+    }
 
-      /**
-       * Check if current user has authorized this application.
-       */
-      function checkAuth() {
-        gapi.auth.authorize(
-          {
-            'client_id': CLIENT_ID,
-            'scope': SCOPES,
-            'immediate': true
-          }, handleAuthResult);
-      }
+    function checkAuth() {
+        var options = {
+            client_id: CLIENT_ID,
+            scope: SCOPES,
+            immediate: true
+        };
+        gapi.auth.authorize(options, handleAuthResult);
+    }
 
-      /**
-       * Handle response from authorization server.
-       *
-       * @param {Object} authResult Authorization result.
-       */
-      function handleAuthResult(authResult) {
-        var authorizeDiv = document.getElementById('authorize-div');
+    function handleAuthResult(authResult) {
+        var authorizeButton = document.getElementById('authorize-button');
+
         if (authResult && !authResult.error) {
-          // Hide auth UI, then load client library.
-          authorizeDiv.style.display = 'none';
-          loadDriveApi();
+            authorizeButton.style.visibility = 'hidden';
+            makeApiCall();
         } else {
-          // Show auth UI, allowing the user to initiate authorization by
-          // clicking authorize button.
-          authorizeDiv.style.display = 'inline';
+            authorizeButton.style.visibility = '';
+            authorizeButton.onclick = handleAuthClick;
         }
-      }
+    }
 
-      /**
-       * Initiate auth flow in response to user clicking authorize button.
-       *
-       * @param {Event} event Button click event.
-       */
-      function handleAuthClick(event) {
-        gapi.auth.authorize(
-          {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
-          handleAuthResult);
+    function handleAuthClick(event) {
+        var options = {
+            client_id: CLIENT_ID,
+            scope: SCOPES,
+            immediate: false
+        };
+        gapi.auth.authorize(options, handleAuthResult);
         return false;
-      }
+    }
 
-      /**
-       * Load Drive API client library.
-       */
-      function loadDriveApi() {
-        gapi.client.load('drive', 'v2', listFiles);
-      }
+    function makeApiCall() {
+        gapi.client.load('drive', 'v2', makeRequest);
+    }
 
-      /**
-       * Print files.
-       */
-      function listFiles() {
-        var request = gapi.client.drive.files.list({
-            'maxResults': 10
-          });
+    function makeRequest() {
+        var request = gapi.client.drive.files.list({'maxResults': 5 });
+        request.execute(function(resp) {
+            for (i=0; i<resp.items.length; i++) {
+                var titulo = resp.items[i].title;
+                var fechaUpd = resp.items[i].modifiedDate;
+                var userUpd = resp.items[i].lastModifyingUserName;
+                var userEmbed = resp.items[i].embedLink;
+                var userAltLink = resp.items[i].alternateLink;
 
-          request.execute(function(resp) {
-            appendPre('Files:');
-            var files = resp.items;
-            if (files && files.length > 0) {
-              for (var i = 0; i < files.length; i++) {
-                var file = files[i];
-                appendPre(file.title + ' (' + file.id + ')');
-              }
-            } else {
-              appendPre('No files found.');
+                var fileInfo = document.createElement('li');
+                fileInfo.appendChild(document.createTextNode('TITLE: ' + titulo + ' - LAST MODIF: ' + fechaUpd + ' - BY: ' + userUpd ));
+                document.getElementById('content').appendChild(fileInfo);
             }
-          });
-      }
+        });
+    }
 
-      /**
-       * Append a pre element to the body containing the given message
-       * as its text node.
-       *
-       * @param {string} message Text to be placed in pre element.
-       */
-      function appendPre(message) {
-        var pre = document.getElementById('output');
-        var textContent = document.createTextNode(message + '\n');
-        pre.appendChild(textContent);
-      }
-
+    $(document).ready(function() {
+      $('#authorize-button').on('click', handleAuthClick);
+      $.getScript('//apis.google.com/js/api.js', function() {
+        gapi.load('auth:client', handleClientLoad);
+      });
+    });
     </script>
     <script src="https://apis.google.com/js/client.js?onload=checkAuth">
     </script>
   </head>
   <body>
-    <div id="authorize-div" style="display: none">
-      <span>Authorize access to Drive API</span>
-      <!--Button for the user to click to initiate auth sequence -->
-      <button id="authorize-button" onclick="handleAuthClick(event)">
-        Authorize
-      </button>
-    </div>
-    <pre id="output"></pre>
+    <button id="authorize-button">Authorize</button>
+    <div id="content">Files:</div>
   </body>
 </html>
