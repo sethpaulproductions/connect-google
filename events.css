@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <style>
+=======
+>>>>>>> master
 /*  SECTIONS  */
 .section {
 	clear: both;
@@ -6,6 +9,7 @@
 	margin: 0px;
 }
 
+<<<<<<< HEAD
 .event-popup {
     background-color:white;
     border: 1px solid green;
@@ -19,6 +23,8 @@
     width:393px;
     z-index:2000;
 }
+=======
+>>>>>>> master
 /*  COLUMN SETUP  */
 .col {
 	display: block;
@@ -26,7 +32,14 @@
 	margin: 1% 0 1% .8%;
 }
 .col:first-child { margin-left: 0; }
+<<<<<<< HEAD
 
+=======
+.jumbotron p {
+
+	color: red;
+}
+>>>>>>> master
 /*  GROUPING  */
 .group:before,
 .group:after { content:""; display:table; }
