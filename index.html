@@ -1,7 +1,13 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> gh-pages
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<<<<<<< HEAD
+=======
 
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
@@ -163,3 +169,246 @@ eventSources: [
 
 </body>
 </html>
+=======
+<link rel="stylesheet" type="text/css" href="//googledrive.com/host/0B3kQ1Mt6SSkhfnoxaTFNREZXLU9SVEVlajdGWGREOW9YbDRpVjdxTTZ2Qks1cVduMFc2d1U/jquery.datetimepicker.css" />
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<script src="events.css"></script>
+<script src="//googledrive.com/host/0B3kQ1Mt6SSkhfnoxaTFNREZXLU9SVEVlajdGWGREOW9YbDRpVjdxTTZ2Qks1cVduMFc2d1U/jquery.js"></script>
+<script src="//googledrive.com/host/0B3kQ1Mt6SSkhfnoxaTFNREZXLU9SVEVlajdGWGREOW9YbDRpVjdxTTZ2Qks1cVduMFc2d1U/jquery.datetimepicker.js"></script>
+
+<script src="//cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#datetimepicker").datetimepicker();
+        $("#timepicker").datetimepicker({
+                datepicker: false,
+                format: 'g:i A'
+            });
+        $("#datepicker").datetimepicker({
+                timepicker: false,
+                format: 'D M j, Y'
+            });
+        $("#commentForm").validate({
+                meta: "validate"
+            });
+    });
+</script>
+<script type="text/javascript">
+    var submitted = false;
+</script>
+
+<body>
+    <div class="jumbotron">
+         <h1>Add Show Tool</h1>
+        <p>Use the following tool to add a show to the Roslyn Music Group calendar.</p>
+    </div>
+
+
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){window.location='http://www.roslynmusicgroup.com/forms';}"></iframe>
+    <form action="https://docs.google.com/a/roslynmusicgroup.com/forms/d/1S8bpV-T96_csWY3GH-XyIKLirIycSjFiWBEMji7d23Y/formResponse" method="post" target="hidden_iframe" id="commentForm" onsubmit="submitted=true;">
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div dir="ltr" class="col-xs-4">
+                    <label for="entry_1862853039" class="form-label">Status*</label>
+                    <select name="entry.1862853039" class="form-control required" id="entry_1862853039">
+                        <option value=""></option>
+                        <option value="Hold">Hold</option>
+                        <option value="Confirmed">Confirmed</option>
+                    </select>
+                </div>
+
+
+                <div dir="ltr" class="col-xs-4">
+                    <label for="entry_960593008" class="form-label">Artist*</label>
+                    <select name="entry.960593008" class="form-control required" id="entry_960593008">
+                        <option value=""></option>
+                        <option value="The Monday After">The Monday After</option>
+                        <option value="Zach Hinson">Zach Hinson</option>
+                        <option value="Rust on the Rails">Rust on the Rails</option>
+                        <option value="Sophia Tilley">Sophia Tilley</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Venue/Event Details</div>
+            <div class="panel-body">
+
+                <div dir="ltr" class="col-xs-4">
+                    <label for="entry_685042144" class="form-label">Venue/Event Name*</label>
+                    <input type="text" name="entry.685042144" value="" class="form-control required" id="entry_685042144" dir="auto">
+                </div>
+
+                <div dir="ltr" class="col-xs-4">
+                    <label for="entry_416812735" class="form-label">Venue Address</label>
+                    <input type="text" name="entry.416812735" value="" class="form-control" id="entry_416812735" dir="auto">
+                </div>
+>>>>>>> gh-pages
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+
+<link href="events.css" rel="stylesheet">
+
+<link rel='stylesheet' href='//googledrive.com/host/0B3kQ1Mt6SSkhfnoxaTFNREZXLU9SVEVlajdGWGREOW9YbDRpVjdxTTZ2Qks1cVduMFc2d1U/fullcalendar.css' />
+
+<script src='//googledrive.com/host/0B3kQ1Mt6SSkhfnoxaTFNREZXLU9SVEVlajdGWGREOW9YbDRpVjdxTTZ2Qks1cVduMFc2d1U/moment.min.js'></script>
+<script src='//googledrive.com/host/0B3kQ1Mt6SSkhfnoxaTFNREZXLU9SVEVlajdGWGREOW9YbDRpVjdxTTZ2Qks1cVduMFc2d1U/fullcalendar.js'></script>
+<script type='text/javascript' src='//googledrive.com/host/0B3kQ1Mt6SSkhfnoxaTFNREZXLU9SVEVlajdGWGREOW9YbDRpVjdxTTZ2Qks1cVduMFc2d1U/gcal.js'></script>
+
+<script type='text/javascript'>
+
+$(document).ready(function() {
+    $('#calendar').fullCalendar({
+        googleCalendarApiKey: 'AIzaSyBHKORr2SoNwdMK2VqUw49U5_Xk7559DfM',
+        header: {
+    left: 'prev,next today',
+    center: 'title',
+    right: 'month,agendaWeek,agendaDay'
+},
+eventSources: [
+            {
+                googleCalendarId: 'roslynmusicgroup.com_3plqcb6fsrnj54mmsftl6osrbs@group.calendar.google.com',
+                color: 'red'
+            },
+
+            {
+                googleCalendarId: 'roslynmusicgroup.com_sts0hb075lad12gr881hutp2og@group.calendar.google.com',
+            },
+
+        ],
+        eventClick: function(event) {
+            if (event.url) {
+                $('#idEventTitle').text(event.title);
+                $('#idDescription').text(event.description);
+                $('#ideventdate').val(event.start);
+            //    alert('Event: ' + event.title);
+                $("#myModal").modal('show');
+                return false;
+            }
+        },
+        dayClick: function(date, jsEvent, view) {
+
+            alert('Clicked on: ' + date.format());
+
+            //alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+
+            //alert('Current view: ' + view.name);
+
+            // change the day's background color just for fun
+            //$(this).css('background-color', 'red');
+
+        }
+    });
+});
+
+</script>
+
+
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Roslyn Music Group Tools</h1>
+      <p>Use the tools below to work with Roslyn Music Group events. </p>
+    </div>
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="idEventTitle"></h4>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label for="comment">Date</label>
+                    <input type="text" class="form-control" id="ideventdate">
+                    <label for="comment">Details</label>
+                    <textarea class="form-control" rows="5" id="idDescription"></textarea>
+                  </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">Tools</div>
+      <div class="panel-body">
+
+    <a href="events.html" class="btn btn-link" role="button">Add Event</a>
+    <a href="https://script.google.com/macros/s/AKfycbzdU67ENA38bfJOI9Nr0nehsk3Eb939JTr3cUwvg7WgBR3ufVs/exec" class="btn btn-link" role="button">Update Settlement</a>
+    <a href="events.html" class="btn btn-link" role="button">Update Show Advance</a>
+    <a href="events.html" class="btn btn-link" role="button">Update Artist Advance</a>
+    <a href="accessgoogle.html" class="btn btn-link" role="button">Google</a>
+</div>
+  </div>
+</div>
+</div>
+<div class="row">
+
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">Files</div>
+      <div class="panel-body">
+
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#tmatab" data-toggle="tab">The Monday After</a></li>
+          <li><a href="#zhTab" data-toggle="tab">Zach Hinson</a></li>
+          <li><a href="#rotrTab" data-toggle="tab">Rust on the Rails</a></li>
+        </ul>
+
+        <div class="tab-content">
+          <div class="tab-pane fade in active" id="tmatab"></a>
+            <h3>The Monday After Public Files<h3>
+            <iframe src="https://drive.google.com/embeddedfolderview?id=0B3kQ1Mt6SSkhfmp1bUM5UEREVmRiNWs2ZzRxME5oQ1lRb0ZoNUZfQUlRLTdZaGxxakdMMEk&usp=drive_web" width="100%" height="200" frameborder="0"></iframe></div>
+          <div class="tab-pane fade" id="zhTab"></a>
+            <h3>Zach Hinson Public Files<h3>
+            <iframe src="https://drive.google.com/embeddedfolderview?id=0B3kQ1Mt6SSkhfnlrV1ZwYVdISmh2OGZRbkItYzVqOHpQX1l2LVY3ZUpMaFFvdkk0ZGVCYVE&usp=drive_web" width="100%" height="200" frameborder="0"></iframe></div>
+          <div class="tab-pane fade" id="rotrTab">
+            <h3>Rust on the Rails Public Files<h3>
+            <iframe src="https://drive.google.com/embeddedfolderview?id=0B3kQ1Mt6SSkhfnYzNjdNRXVMSHdiSFJaOWkwNmhqYkN0clI1LTNpd2t3M3hTRDRKX0xsRzA&usp=drive_web" width="100%" height="200" frameborder="0"></iframe>
+</div>
+        </div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">Calendar</div>
+      <div class="panel-body">
+        <div id='calendar'></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+</body>
+<<<<<<< HEAD
+</html>
+=======
+>>>>>>> master
+>>>>>>> gh-pages
