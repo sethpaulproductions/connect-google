@@ -19,7 +19,7 @@
     }
 
     function createNewFile(  ) {
-
+            document.getElementById('result').innerHTML = "Testing";  
         gapi.client.load('drive', 'v2', function() {
 
            var request = gapi.client.request({
@@ -34,5 +34,5 @@
 
           request.execute(function(resp) { console.log(resp); });
        });
-            document.getElementById('result').innerHTML = "Testing";   
+
     }
