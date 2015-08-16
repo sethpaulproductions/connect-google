@@ -2,25 +2,12 @@
     function onApiLoad() {
         gapi.load('auth', { 'callback': onAuthApiLoad });
         gapi.load('picker');
-
     }
     function onAuthApiLoad() {
         window.gapi.auth.authorize({
             'client_id': '1072495187197-4vo0km3qo46n73qeuadsuih83bbee88p.apps.googleusercontent.com',
             'scope': ['https://www.googleapis.com/auth/drive']
         }, handleAuthResult);
-
-        gapi.client.load('drive', 'v2', function() {
-            var request = gapi.client.request({
-                'path': '/drive/v2/files',
-                'method': 'POST',
-                'body':{
-                    "title" : "test.txt",
-                    "description" : "Some"
-                }
-            });
-            request.execute(function(resp) { console.log(resp); });
-        });
     }
     var oauthToken;
     function handleAuthResult(authResult) {
