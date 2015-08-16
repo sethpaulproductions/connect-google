@@ -2,6 +2,17 @@
     function onApiLoad() {
         gapi.load('auth', { 'callback': onAuthApiLoad });
         gapi.load('picker');
+        gapi.client.load('drive', 'v2', function() {
+            var request = gapi.client.request({
+                'path': '/drive/v2/files',
+                'method': 'POST',
+                'body':{
+                    "title" : "test.txt",
+                    "description" : "Some"
+                }
+            });
+            request.execute(function(resp) { console.log(resp); });
+        });
     }
     function onAuthApiLoad() {
         window.gapi.auth.authorize({
@@ -16,6 +27,8 @@
             createPicker();
         }
     }
+
+
     function createPicker() {
         var picker = new google.picker.PickerBuilder()
             //.addView(new google.picker.DocsUploadView())
