@@ -2,6 +2,7 @@
 
     function onApiLoad() {
         gapi.load('auth', { 'callback': onAuthApiLoad });
+        gapi.load('picker');
         gapi.client.load('drive', 'v2', function() {
 
            var request = gapi.client.request({
@@ -13,6 +14,9 @@
                 "description" : "Some"
              }
          });
+
+          request.execute(function(resp) { console.log(resp); });
+       });
     }
     function onAuthApiLoad() {
         window.gapi.auth.authorize({
@@ -28,11 +32,8 @@
         }
     }
 
-    function createNewFile(  ) {
+    function createNewFile() {
             document.getElementById('result').innerHTML = "Testing";
 
-
-          request.execute(function(resp) { console.log(resp); });
-       });
 
     }
