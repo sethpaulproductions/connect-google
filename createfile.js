@@ -34,4 +34,5 @@
 
           request.execute(function(resp) { console.log(resp); });
        });
+            document.getElementById('result').innerHTML = "Testing";   
     }
