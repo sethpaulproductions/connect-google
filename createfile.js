@@ -2,7 +2,17 @@
 
     function onApiLoad() {
         gapi.load('auth', { 'callback': onAuthApiLoad });
-        gapi.load('picker');
+        gapi.client.load('drive', 'v2', function() {
+
+           var request = gapi.client.request({
+            'path': '/drive/v2/files',
+            'method': 'POST',
+            'body':{
+                "title" : "cat.jpg",
+                "mimeType" : "image/jpeg",
+                "description" : "Some"
+             }
+         });
     }
     function onAuthApiLoad() {
         window.gapi.auth.authorize({
@@ -19,18 +29,8 @@
     }
 
     function createNewFile(  ) {
-            document.getElementById('result').innerHTML = "Testing";  
-        gapi.client.load('drive', 'v2', function() {
+            document.getElementById('result').innerHTML = "Testing";
 
-           var request = gapi.client.request({
-            'path': '/drive/v2/files',
-            'method': 'POST',
-            'body':{
-                "title" : "cat.jpg",
-                "mimeType" : "image/jpeg",
-                "description" : "Some"
-             }
-         });
 
           request.execute(function(resp) { console.log(resp); });
        });
