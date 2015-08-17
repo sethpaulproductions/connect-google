@@ -72,22 +72,10 @@ var request1 = gapi.client.drive.files.insert({
 });
 var newID;
 request1.execute(function(resp) {
-  newID = resp.id;
+  copyFiles2(resp.id);
 });
 
-         var body = {'title': "copyTitle",
-                      'parents' : [ { "id" : newID } ]
 
-                    };
-
-
-         var request = gapi.client.drive.files.copy({
-           'fileId': '1twkDnX_KQ6Kmd1W2RljeCQRBV0y3Tsh_3JGNZd6r_iw',
-           'resource': body
-         });
-         request.execute(function(resp) {
-           console.log('Copy ID: ' + resp.id);
-         });
        }
       /**
        * Append a pre element to the body containing the given message
@@ -95,6 +83,25 @@ request1.execute(function(resp) {
        *
        * @param {string} message Text to be placed in pre element.
        */
+
+      function copyFiles2(newID) {
+        var body = {'title': "copyTitle",
+                     'parents' : [ { "id" : newID } ]
+
+                   };
+
+
+        var request = gapi.client.drive.files.copy({
+          'fileId': '1twkDnX_KQ6Kmd1W2RljeCQRBV0y3Tsh_3JGNZd6r_iw',
+          'resource': body
+        });
+        request.execute(function(resp) {
+          console.log('Copy ID: ' + resp.id);
+        });
+
+      }
+
+
       function appendPre(message) {
         var pre = document.getElementById('output');
         var textContent = document.createTextNode(message + '\n');
