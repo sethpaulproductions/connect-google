@@ -63,6 +63,7 @@
        function copyFile() {
          var body1 = {
   'title': "folderName",
+  'parents' : [ { "id" : "0B3kQ1Mt6SSkhflBsQWVfbGtnalc5amhONjZRUnFiRkhUN2dNZ1VOTjFNcGtDenpvdmdjTEE" } ],
   'mimeType': "application/vnd.google-apps.folder"
 };
 
@@ -71,11 +72,11 @@ var request1 = gapi.client.drive.files.insert({
 });
 
 request1.execute(function(resp) {
-  console.log('Folder ID: ' + resp.id);
+  var newID = resp.id);
 });
 
          var body = {'title': "copyTitle",
-                      'parents' : [ { "id" : "0B3kQ1Mt6SSkhflBsQWVfbGtnalc5amhONjZRUnFiRkhUN2dNZ1VOTjFNcGtDenpvdmdjTEE" } ]
+                      'parents' : [ { "id" : newID } ]
 
                     };
 
