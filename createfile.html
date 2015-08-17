@@ -70,9 +70,9 @@
 var request1 = gapi.client.drive.files.insert({
   'resource': body1
 });
-
+var newID;
 request1.execute(function(resp) {
-  var newID = resp.id;
+  newID = resp.id;
 });
 
          var body = {'title': "copyTitle",
