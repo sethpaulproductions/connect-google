@@ -30,7 +30,7 @@
         if (authResult && !authResult.error) {
           // Hide auth UI, then load client library.
           authorizeDiv.style.display = 'none';
-          loadDriveApi();
+          //loadDriveApi();
         } else {
           // Show auth UI, allowing the user to initiate authorization by
           // clicking authorize button.
@@ -113,6 +113,11 @@ request1.execute(function(resp) {
     </script>
   </head>
   <body>
+    
+            <div >
+                <input type='button'  class="btn btn-primary" value='Creae File Structure' onmouseup='loadDriveApi()' />
+            </div>
+            
     <div id="authorize-div" style="display: none">
       <span>Authorize access to Drive API</span>
       <!--Button for the user to click to initiate auth sequence -->
