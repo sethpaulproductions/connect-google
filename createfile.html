@@ -61,17 +61,18 @@
        * Print files.
        */
        function copyFile() {
-         var body1 = {
+         var body = {
   'title': "folderName",
   'parents' : [ { "id" : "0B3kQ1Mt6SSkhflBsQWVfbGtnalc5amhONjZRUnFiRkhUN2dNZ1VOTjFNcGtDenpvdmdjTEE" } ],
   'mimeType': "application/vnd.google-apps.folder"
 };
 
-var request1 = gapi.client.drive.files.insert({
-  'resource': body1
+var request = gapi.client.drive.files.insert({
+  'resource': body
 });
-var newID;
-request1.execute(function(resp) {
+
+
+request.execute(function(resp) {
   copyFiles2(resp.id);
 });
 
@@ -96,7 +97,7 @@ request1.execute(function(resp) {
           'resource': body
         });
         request.execute(function(resp) {
-          console.log('Copy ID: ' + resp.id);
+          alert'Copy ID: ' + resp.id);
         });
 
       }
