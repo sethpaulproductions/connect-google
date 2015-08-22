@@ -98,10 +98,8 @@
             });
         }
         
-
-
         var initialRequest = gapi.client.request({
-            'path': '/drive/v2/files/0B3kQ1Mt6SSkhflBsQWVfbGtnalc5amhONjZRUnFiRkhUN2dNZ1VOTjFNcGtDenpvdmdjTEE/children',
+            'path': '/drive/v2/files',
             'method': 'GET',
             'params': {
             'q': 'trashed = false and mimeType = "application/vnd.google-apps.folder"'
