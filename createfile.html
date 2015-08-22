@@ -138,13 +138,7 @@ request.execute(function(resp) {
                             <option value="Zach Hinson">Zach Hinson</option>
                         </select>
                     </div>
-                    <div class="col-xs-4">
-                        <label for="idEvent">Event</label>
-                        <select class="form-control" onchange='google.script.run.withSuccessHandler(fillCells).getSSValues(document.getElementById("idArtist").options[document.getElementById("idArtist").selectedIndex].value, document.getElementById("idEvent").options[document.getElementById("idEvent").selectedIndex].value)'
-                        id="idEvent" name="event">
-                            <option>Select</option>
-                        </select>
-                    </div>
+
                     
 
                 </div>
@@ -153,7 +147,7 @@ request.execute(function(resp) {
       </div>
     
             <div >
-                <input type='button'  class="btn btn-primary" value='Creae File Structure' onmouseup='loadDriveApi()' />
+                <input type='button'  class="btn btn-primary" value='Create File Structure' onmouseup='loadDriveApi()' />
             </div>
             
     <div id="authorize-div" style="display: none">
