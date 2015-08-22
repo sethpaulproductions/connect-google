@@ -2,7 +2,7 @@
       // Developer Console, https://console.developers.google.com
       var CLIENT_ID = '1072495187197-4vo0km3qo46n73qeuadsuih83bbee88p.apps.googleusercontent.com';
 
-      var SCOPES = ['https://www.googleapis.com/auth/drive.file'];
+      var SCOPES = ['https://www.googleapis.com/auth/drive'];
 
 
       function setProperties() {
@@ -101,7 +101,7 @@
             'path': '/drive/v2/files',
             'method': 'GET',
             'params': {
-            'q': 'trashed = false and mimeType = "application/vnd.google-apps.folder" and parents = [ { "id" : "0B3kQ1Mt6SSkhflBsQWVfbGtnalc5amhONjZRUnFiRkhUN2dNZ1VOTjFNcGtDenpvdmdjTEE" } ]'
+            'q': 'trashed = false'
             }
         });
         retrievePageOfFiles(initialRequest, []);
