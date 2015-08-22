@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <script type="text/javascript">
       // Your Client ID can be retrieved from your project in the Google
       // Developer Console, https://console.developers.google.com
@@ -114,6 +115,42 @@ request.execute(function(resp) {
     </script>
   </head>
   <body>
+          <div class="panel panel-default">
+        <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <label for="idYear">Year</label>
+                        <select class="form-control" id="idYear" name="year">
+                            <option value="empty">Select</option>
+                            <option value="2015">2015</option>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-4">
+                        <label for="idArtist">Artist</label>
+                        <select class="form-control" onchange='google.script.run.withSuccessHandler(setProperties).getEvents(document.getElementById("idArtist").options[document.getElementById("idArtist").selectedIndex].value, document.getElementById("idYear").options[document.getElementById("idYear").selectedIndex].value)'
+                        id="idArtist" name="artist">
+                            <option value="empty">Select</option>
+                            <option value="The Monday After">The Monday After</option>
+                            <option value="Rust on the Rails">Rust on the Rails</option>
+                            <option value="Zach Hinson">Zach Hinson</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-4">
+                        <label for="idEvent">Event</label>
+                        <select class="form-control" onchange='google.script.run.withSuccessHandler(fillCells).getSSValues(document.getElementById("idArtist").options[document.getElementById("idArtist").selectedIndex].value, document.getElementById("idEvent").options[document.getElementById("idEvent").selectedIndex].value)'
+                        id="idEvent" name="event">
+                            <option>Select</option>
+                        </select>
+                    </div>
+                    
+
+                </div>
+
+         </div>
+      </div>
     
             <div >
                 <input type='button'  class="btn btn-primary" value='Creae File Structure' onmouseup='loadDriveApi()' />
