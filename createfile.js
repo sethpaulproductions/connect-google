@@ -70,15 +70,17 @@
        * Load Drive API client library.
        */
       function loadDriveApi() {
-        gapi.client.load('drive', 'v2', copyFile);
+        gapi.client.load('drive', 'v2', findYear);
       }
 
       /**
-       * Print files.
+       * Create folder structure.
        */
-       function copyFile() {
+       function findYear() {
              
          var bookingFolderID = setProperties();    
+         
+         
          var body = {
               'title': "folderName",
               'parents' : [ { "id" : bookingFolderID } ],
