@@ -81,7 +81,7 @@
          var bookingFolderID = setProperties();    
          var body = {
               'title': "folderName",
-              'parents' : [ { "id" : "bookingFolderID" } ],
+              'parents' : [ { "id" : bookingFolderID } ],
               'mimeType': "application/vnd.google-apps.folder"
             };
             
