@@ -99,7 +99,7 @@
         }
         
         var initialRequest = gapi.client.drive.children.list({
-      '     folderId' : '0B3kQ1Mt6SSkhflBsQWVfbGtnalc5amhONjZRUnFiRkhUN2dNZ1VOTjFNcGtDenpvdmdjTEE'
+           'folderId' : '0B3kQ1Mt6SSkhflBsQWVfbGtnalc5amhONjZRUnFiRkhUN2dNZ1VOTjFNcGtDenpvdmdjTEE'
         });
 
         /*var initialRequest = gapi.client.request({
