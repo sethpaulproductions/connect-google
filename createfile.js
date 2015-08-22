@@ -9,7 +9,7 @@
        */
       function setProperties() {
         var bookingFolderID;
-        var artistName = document.getElementById('idArtist').value;
+        var artistName = "The Monday After";
         switch (artistName) {
         case "The Monday After":
             bookingFolderID = "0B3kQ1Mt6SSkhflBsQWVfbGtnalc5amhONjZRUnFiRkhUN2dNZ1VOTjFNcGtDenpvdmdjTEE";
