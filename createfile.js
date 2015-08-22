@@ -4,9 +4,7 @@
 
       var SCOPES = ['https://www.googleapis.com/auth/drive.file'];
 
-      /**
-       * Check if current user has authorized this application.
-       */
+
       function setProperties() {
         var bookingFolderID;
         var artistName = document.getElementById('idArtist').value;
@@ -26,6 +24,10 @@
   
 
       } 
+      
+      /**
+       * Check if current user has authorized this application.
+       */      
        
       function checkAuth() {
         gapi.auth.authorize(
@@ -70,15 +72,54 @@
        * Load Drive API client library.
        */
       function loadDriveApi() {
-        gapi.client.load('drive', 'v2', findYear);
+        gapi.client.load('drive', 'v2', retrieveAllFiles);
       }
 
       /**
        * Create folder structure.
        */
+       
+      function retrieveAllFiles()  {
+        var retrievePageOfFiles = function(request) {
+            request.execute(function(resp) {
+                displayFileList(resp.items);
+                var nextPageToken = resp.nextPageToken;
+                if (nextPageToken) {
+                    request = gapi.client.request({
+                        'path': '/drive/v2/files',
+                        'method': 'GET',
+                        'pageToken': nextPageToken,
+                        'params': {
+                        'q': 'trashed = false'
+                        }
+                    });
+                    retrievePageOfFiles(request);
+                }
+            });
+        }
+        var initialRequest = gapi.client.request({
+            'path': '/drive/v2/files',
+            'method': 'GET',
+            'params': {
+            'q': 'trashed = false and mimeType = "application/vnd.google-apps.folder" and parents = [ { "id" : "0B3kQ1Mt6SSkhflBsQWVfbGtnalc5amhONjZRUnFiRkhUN2dNZ1VOTjFNcGtDenpvdmdjTEE" } ]'
+            }
+        });
+        retrievePageOfFiles(initialRequest, []);
+      } 
+       
+      function displayFileList(result){
+        if(result.length > 0){
+                $("#data-grid").show();
+                for(var counter = 0; counter < result.length; counter++){
+                     $("body").append("<div>" + result[counter].title + "</div>");
+                }
+            }
+      } 
+       
        function findYear() {
              
          var bookingFolderID = setProperties();    
+         
          
          
          var body = {
