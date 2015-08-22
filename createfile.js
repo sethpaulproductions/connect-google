@@ -98,17 +98,15 @@
             });
         }
         
-        var initialRequest = gapi.client.drive.children.list({
-           'folderId' : '0B3kQ1Mt6SSkhflBsQWVfbGtnalc5amhONjZRUnFiRkhUN2dNZ1VOTjFNcGtDenpvdmdjTEE'
-        });
 
-        /*var initialRequest = gapi.client.request({
+
+        var initialRequest = gapi.client.request({
             'path': '/drive/v2/files/0B3kQ1Mt6SSkhflBsQWVfbGtnalc5amhONjZRUnFiRkhUN2dNZ1VOTjFNcGtDenpvdmdjTEE/children',
             'method': 'GET',
             'params': {
             'q': 'trashed = false and mimeType = "application/vnd.google-apps.folder"'
             }
-        });*/
+        });
         retrievePageOfFiles(initialRequest, []);
       } 
        
