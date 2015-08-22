@@ -7,6 +7,26 @@
       /**
        * Check if current user has authorized this application.
        */
+      function setProperties() {
+        var bookingFolderID;
+        var artistName = document.getElementById('idArtist').value;
+        switch (artistName) {
+        case "The Monday After":
+            bookingFolderID = "0B3kQ1Mt6SSkhflBsQWVfbGtnalc5amhONjZRUnFiRkhUN2dNZ1VOTjFNcGtDenpvdmdjTEE";
+            break;
+        case "Zach Hinson":
+            bookingFolderID = "0B3kQ1Mt6SSkhfmhSVDh4TXE5eTJlYUlEaU52SlpaS01yc0pWcTV2c1ZKbnhtc3NGMFRZaWs";
+            break;
+        case "Rust on the Rails":
+            bookingFolderID = "0B3kQ1Mt6SSkhfkR1LTk4R0hIbFpiaFZvRzl6T0M5Y0N4bmhDQ2Y3eHVHMURpWnhzdldfWG8";
+            break;
+        }    
+        
+        return bookingFolderID;
+  
+
+      } 
+       
       function checkAuth() {
         gapi.auth.authorize(
           {
@@ -57,29 +77,26 @@
        * Print files.
        */
        function copyFile() {
+             
+         var bookingFolderID = setProperties();    
          var body = {
-  'title': "folderName",
-  'parents' : [ { "id" : "0B3kQ1Mt6SSkhflBsQWVfbGtnalc5amhONjZRUnFiRkhUN2dNZ1VOTjFNcGtDenpvdmdjTEE" } ],
-  'mimeType': "application/vnd.google-apps.folder"
-};
-
-var request = gapi.client.drive.files.insert({
-  'resource': body
-});
-
-
-request.execute(function(resp) {
-  copyFiles2(resp.id);
-});
+              'title': "folderName",
+              'parents' : [ { "id" : "bookingFolderID" } ],
+              'mimeType': "application/vnd.google-apps.folder"
+            };
+            
+            var request = gapi.client.drive.files.insert({
+              'resource': body
+            });
+            
+            
+            request.execute(function(resp) {
+              copyFiles2(resp.id);
+            });
 
 
        }
-      /**
-       * Append a pre element to the body containing the given message
-       * as its text node.
-       *
-       * @param {string} message Text to be placed in pre element.
-       */
+
 
       function copyFiles2(newID) {
         var body = {'title': "copyTitle",
@@ -96,11 +113,4 @@ request.execute(function(resp) {
           alert('Copy ID: ' + resp.id);
         });
 
-      }
-
-
-      function appendPre(message) {
-        var pre = document.getElementById('output');
-        var textContent = document.createTextNode(message + '\n');
-        pre.appendChild(textContent);
       }
