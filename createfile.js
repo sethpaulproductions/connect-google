@@ -91,7 +91,7 @@
                         'method': 'GET',
                         'pageToken': nextPageToken,
                         'params': {
-                        'q': 'trashed = false and mimeType = "application/vnd.google-apps.folder" and "' + bookingFolder + '" in parents'
+                        'q': 'trashed = false and mimeType = "application/vnd.google-apps.folder" and "' + bookingFolderID + '" in parents'
                         }
                     });
                     retrievePageOfFiles(request);
@@ -103,7 +103,7 @@
             'path': '/drive/v2/files',
             'method': 'GET',
             'params': {
-            'q': 'trashed = false and mimeType = "application/vnd.google-apps.folder" and "' + bookingFolder + '" in parents'
+            'q': 'trashed = false and mimeType = "application/vnd.google-apps.folder" and "' + bookingFolderID + '" in parents'
             }
         });
         retrievePageOfFiles(initialRequest, []);
