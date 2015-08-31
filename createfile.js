@@ -1,4 +1,3 @@
-
       // Your Client ID can be retrieved from your project in the Google
       // Developer Console, https://console.developers.google.com
       var CLIENT_ID = '1072495187197-4vo0km3qo46n73qeuadsuih83bbee88p.apps.googleusercontent.com';
@@ -180,6 +179,3 @@
         });
 
       }
-
-
-
