@@ -124,14 +124,17 @@
         if(result.length > 0){
                 var selectedYear = document.getElementById('idYear').value;
                 var yearID;
-            
+                $("#data-grid").show();            
                 for(var counter = 0; counter < result.length; counter++){
                     if (result[counter].title == selectedYear){
+                    
                         yearID = result[counter].id;
                                   alert('Copy ID: ' + yearID + yearID);
-                       createFolder(yearID); 
+                      // createFolder(yearID); 
                     }
+                 $("body").append("<div>" + result[counter].title + yearID + "</div>");
                 }
+
             }
       } 
        
