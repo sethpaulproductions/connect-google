@@ -79,19 +79,22 @@
        */
        
       function retrieveAllFiles()  {
+        var bookingFolderID = setProperties();    
         var retrievePageOfFiles = function(request) {
             request.execute(function(resp) {
-                displayFileList(resp.items);
+                getYearID(resp.items);
                 var nextPageToken = resp.nextPageToken;
+                var bookingFolderID = setProperties();  
                 if (nextPageToken) {
                     request = gapi.client.request({
                         'path': '/drive/v2/files',
                         'method': 'GET',
                         'pageToken': nextPageToken,
                         'params': {
-                        'q': 'trashed = false and mimeType = "application/vnd.google-apps.folder" and "0B3kQ1Mt6SSkhflBsQWVfbGtnalc5amhONjZRUnFiRkhUN2dNZ1VOTjFNcGtDenpvdmdjTEE" in parents'
+                        'q': 'trashed = false and mimeType = "application/vnd.google-apps.folder" and ' + bookingFolderID + ' in parents'
                         }
                     });
+                    alert
                     retrievePageOfFiles(request);
                 }
             });
@@ -101,7 +104,7 @@
             'path': '/drive/v2/files',
             'method': 'GET',
             'params': {
-            'q': 'trashed = false and mimeType = "application/vnd.google-apps.folder" and "0B3kQ1Mt6SSkhflBsQWVfbGtnalc5amhONjZRUnFiRkhUN2dNZ1VOTjFNcGtDenpvdmdjTEE" in parents'
+            'q': 'trashed = false and mimeType = "application/vnd.google-apps.folder" and ' + bookingFolderID + ' in parents'
             }
         });
         retrievePageOfFiles(initialRequest, []);
@@ -117,14 +120,16 @@
       } */
        
 
-      function displayFileList(result){
+      function getYearID(result){
         if(result.length > 0){
+                var selectedYear = document.getElementById('idYear').value;
                 var yearID;
+            
                 $("#data-grid").show();
                 for(var counter = 0; counter < result.length; counter++){
-                    if (result[counter].title = "2015"){
+                    if (result[counter].title = selectedYear){
                         yearID = result[counter].id;
-                                  alert('Copy ID: ' + yearID + result[counter].id);
+                                  alert('Copy ID: ' + yearID + yearID);
                         
                     }
                         
