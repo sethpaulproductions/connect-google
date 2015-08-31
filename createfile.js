@@ -81,6 +81,7 @@
       function retrieveAllFiles()  {
         var bookingFolderID = setProperties();    
         var retrievePageOfFiles = function(request) {
+                               alert('Booking ID: ' + bookingFolderID);
             request.execute(function(resp) {
                 getYearID(resp.items);
                 var nextPageToken = resp.nextPageToken;
@@ -94,7 +95,6 @@
                         'q': 'trashed = false and mimeType = "application/vnd.google-apps.folder" and "0B3kQ1Mt6SSkhflBsQWVfbGtnalc5amhONjZRUnFiRkhUN2dNZ1VOTjFNcGtDenpvdmdjTEE" in parents'
                         }
                     });
-                    alert('Booking ID: ' + bookingFolderID);
                     retrievePageOfFiles(request);
                 }
             });
