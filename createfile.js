@@ -124,29 +124,30 @@
         if(result.length > 0){
                 var selectedYear = document.getElementById('idYear').value;
                 var yearID;
-                $("#data-grid").show();            
+            
+                $("#data-grid").show();
                 for(var counter = 0; counter < result.length; counter++){
                     if (result[counter].title = selectedYear){
-                    
                         yearID = result[counter].id;
                                   alert('Copy ID: ' + yearID + yearID);
-                      // createFolder(yearID); 
+                        
                     }
-                 $("body").append("<div>" + result[counter].title + selectedYear + "</div>");
+                        
+                     $("body").append("<div>" + result[counter].title + "</div>");
                 }
-
             }
       } 
        
 
-       function createFolder(yearID) {
+       function findYear() {
              
-         var eventName = document.getElementById('idArtist').value + " Event Name";
+         var bookingFolderID = setProperties();    
+         
          
          
          var body = {
-              'title': eventName,
-              'parents' : [ { "id" : yearID } ],
+              'title': "folderName",
+              'parents' : [ { "id" : bookingFolderID } ],
               'mimeType': "application/vnd.google-apps.folder"
             };
             
