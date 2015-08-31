@@ -1,3 +1,4 @@
+
       // Your Client ID can be retrieved from your project in the Google
       // Developer Console, https://console.developers.google.com
       var CLIENT_ID = '1072495187197-4vo0km3qo46n73qeuadsuih83bbee88p.apps.googleusercontent.com';
@@ -21,8 +22,6 @@
         }    
         
         return bookingFolderID;
-  
-
       } 
       
       /**
@@ -108,15 +107,33 @@
         retrievePageOfFiles(initialRequest, []);
       } 
        
-      function displayFileList(result){
+  /*    function displayFileList(result){
         if(result.length > 0){
                 $("#data-grid").show();
                 for(var counter = 0; counter < result.length; counter++){
                      $("body").append("<div>" + result[counter].title + "</div>");
                 }
             }
+      } */
+       
+
+      function displayFileList(result){
+        if(result.length > 0){
+                var yearID;
+                $("#data-grid").show();
+                for(var counter = 0; counter < result.length; counter++){
+                    if (result[counter].title = "2015"){
+                        yearID = result[counter].id;
+                                  alert('Copy ID: ' + yearID + result[counter].id);
+                        
+                    }
+                        
+                     $("body").append("<div>" + result[counter].title + "</div>");
+                }
+            }
       } 
        
+
        function findYear() {
              
          var bookingFolderID = setProperties();    
@@ -158,3 +175,6 @@
         });
 
       }
+
+
+
