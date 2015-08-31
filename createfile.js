@@ -1,3 +1,4 @@
+
       // Your Client ID can be retrieved from your project in the Google
       // Developer Console, https://console.developers.google.com
       var CLIENT_ID = '1072495187197-4vo0km3qo46n73qeuadsuih83bbee88p.apps.googleusercontent.com';
@@ -123,30 +124,29 @@
         if(result.length > 0){
                 var selectedYear = document.getElementById('idYear').value;
                 var yearID;
-            
-                $("#data-grid").show();
+                $("#data-grid").show();            
                 for(var counter = 0; counter < result.length; counter++){
-                    if (result[counter].title == selectedYear){
+                    if (result[counter].title = selectedYear){
+                    
                         yearID = result[counter].id;
                                   alert('Copy ID: ' + yearID + yearID);
-                        
+                      createFolder(yearID); 
                     }
-                        
-                     $("body").append("<div>" + result[counter].title + "</div>");
+                 $("body").append("<div>" + result[counter].title + selectedYear + "</div>");
                 }
+
             }
       } 
        
 
-       function findYear() {
+       function createFolder(yearID) {
              
-         var bookingFolderID = setProperties();    
-         
+         var eventName = document.getElementById('idArtist').value + " Event Name";
          
          
          var body = {
-              'title': "folderName",
-              'parents' : [ { "id" : bookingFolderID } ],
+              'title': eventName,
+              'parents' : [ { "id" : yearID } ],
               'mimeType': "application/vnd.google-apps.folder"
             };
             
@@ -179,3 +179,6 @@
         });
 
       }
+
+
+
