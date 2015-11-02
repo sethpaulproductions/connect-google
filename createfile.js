@@ -3,7 +3,7 @@
       // Developer Console, https://console.developers.google.com
       var CLIENT_ID = '1072495187197-4vo0km3qo46n73qeuadsuih83bbee88p.apps.googleusercontent.com';
 
-      var SCOPES = ['https://www.googleapis.com/auth/drive'];
+      var SCOPES = ['https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/calendar'];
 
 
       function setProperties() {
